@@ -1,0 +1,51 @@
+---
+title: "Sample"
+output: html_document
+---
+
+### Experimenting With R Studio Markdown
+```{r}
+inst
+```
+
+```{r warning=FALSE, message = FALSE}
+library(dplyr)
+
+#Code in the headline will remove the warning lines from the knitted HTML. 
+```
+
+I am going to do a simple R chunk 
+```{r}
+x <- 2 + 2
+x
+```
+
+Without R Input
+```{r echo=FALSE}
+x <- 2 + 2
+x
+```
+
+```{r fig.width= 8, fig.height=8}
+plot(cars$speed, cars$dist)
+```
+
+```{r}
+## Plot the cars speed by distance
+plot(cars$speed,cars$dist, xlab="Speed (mph)", ylab="Distance (miles)", pch=19, cex=1.3, cex.axis=1.3, cex.lab=1.5)
+
+## Run a linear model comparing speed and distance
+m1 <- lm(dist~speed, data=cars)
+summary(m1) ## output of linear model
+## add linear model to plot
+abline(m1, col="Red", lwd=2)
+```
+
+
+
+
+
+
+
+
+
